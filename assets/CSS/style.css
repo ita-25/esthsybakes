@@ -37,3 +37,28 @@ body { background-color: var(--esthsy-cream); color: var(--esthsy-brown); font-f
     .text-md-start { text-align: center !important; }
     .hero-bakery { text-align: center; }
         }
+
+/* Typography Scaling */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+.ls-2 { letter-spacing: 2px; }
+.italic { font-style: italic; }
+
+/* Responsive Image Handling */
+@media (max-width: 991px) {
+    .rounded-5 {
+        border-radius: 20px !important;
+    }
+}
+
+/* Specific Contact Box Styling */
+.text-gold {
+    color: var(--esthsy-pink); /* Using pink as our "gold" highlight for this brand */
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
