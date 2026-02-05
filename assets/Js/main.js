@@ -1,15 +1,13 @@
-const menuBtn = document.getElementById('mobile-menu-btn');
-const navLinks = document.getElementById('nav-links');
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.getElementById('nav-menu');
 
-menuBtn.addEventListener('click', () => {
-    menuBtn.classList.toggle('active');
-    navLinks.classList.toggle('active');
+navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('open');
+    navMenu.classList.toggle('open');
 });
 
 // Close menu when a link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        menuBtn.classList.remove('active');
-        navLinks.classList.remove('active');
-    });
-});
+document.querySelectorAll('.nav-list a').forEach(n => n.addEventListener('click', () => {
+    navToggle.classList.remove('open');
+    navMenu.classList.remove('open');
+}));
