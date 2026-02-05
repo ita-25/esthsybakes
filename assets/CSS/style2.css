@@ -1,0 +1,12 @@
+:root { --p: #f06292; --b: #2d2d2d; --bg: #fdf6f6; }
+body { background: var(--bg); font-family: 'Inter', sans-serif; }
+
+.hero-arch-img { 
+    border-radius: 200px 200px 20px 20px; 
+    box-shadow: 30px 30px 0px var(--p); /* Bold pink offset shadow */
+    transition: 0.5s;
+}
+.hero-arch-img:hover { transform: translate(-10px, -10px); box-shadow: 40px 40px 0px var(--p); }
+
+.product-card { background: #fff; border-radius: 30px; padding: 20px; transition: 0.4s; }
+.product-card:hover { transform: scale(1.03); box-shadow: 0 20px 40px rgba(240,98,146,0.15); }
