@@ -1,76 +1,73 @@
+/* --- APP-STYLE HEADER BOUNDARY --- */
 :root {
-    --esthsy-pink: #f48fb1;       /* Vibrant but soft pink */
-    --esthsy-pink-light: #fce4ec; /* Background wash */
-    --esthsy-brown: #4e342e;      /* Deep chocolate text */
-    --esthsy-white: #ffffff;
-    --header-height: 80px;        /* Fixes your spacing issue */
+    --esthsy-pink: #f48fb1;
+    --esthsy-brown: #4e342e;
+    --header-height: 75px;
 }
 
-/* 1. The "Inviting" Background */
-body { 
-    background: linear-gradient(180deg, #fce4ec 0%, #fff5f8 100%);
-    color: var(--esthsy-brown);
-    font-family: 'Inter', sans-serif;
-    padding-top: var(--header-height); /* Essential: Creates the boundary */
+body { padding-top: var(--header-height); background: #fce4ec; }
+
+/* --- THE HAMBURGER BOX FIX --- */
+.navbar-toggler {
+    border: none !important;
+    padding: 0 !important;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100; /* Stays above the overlay */
 }
 
-h1, h2, .navbar-brand { font-family: 'Playfair Display', serif; }
-
-/* 2. The "App-Style" Sticky Header */
-.navbar {
-    height: var(--header-height);
-    background: rgba(255, 255, 255, 0.8) !important;
-    backdrop-filter: blur(20px); /* Glass effect */
-    border-bottom: 2px solid rgba(244, 143, 177, 0.2); /* The boundary line */
-    z-index: 1050;
-}
-
-/* 3. The Hamburger "X" Logic */
-.navbar-toggler { border: none !important; width: 30px; height: 30px; position: relative; }
-.toggler-icon { width: 100%; height: 2px; background: var(--esthsy-brown); display: block; position: absolute; transition: 0.3s; }
-.top-bar { top: 6px; } .middle-bar { top: 14px; } .bottom-bar { top: 22px; }
-.navbar-toggler:not(.collapsed) .top-bar { transform: rotate(45deg); top: 14px; }
-.navbar-toggler:not(.collapsed) .middle-bar { opacity: 0; }
-.navbar-toggler:not(.collapsed) .bottom-bar { transform: rotate(-45deg); top: 14px; }
-
-/* 4. The Stunning Hero Arch */
-.hero-arch-wrapper {
+.hamburger-box {
+    width: 24px;
+    height: 18px;
     position: relative;
-    animation: float 5s infinite ease-in-out;
 }
 
-.hero-arch-img {
+.toggler-icon {
+    width: 24px;
+    height: 2px;
+    background: var(--esthsy-brown);
+    display: block;
+    position: absolute;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.top-bar { top: 0; }
+.middle-bar { top: 8px; }
+.bottom-bar { top: 16px; }
+
+/* The "X" Transformation - Centered perfectly */
+.navbar-toggler:not(.collapsed) .top-bar { transform: rotate(45deg); top: 8px; }
+.navbar-toggler:not(.collapsed) .middle-bar { opacity: 0; }
+.navbar-toggler:not(.collapsed) .bottom-bar { transform: rotate(-45deg); top: 8px; }
+
+/* --- THE STYLE 3 FULL-SCREEN OVERLAY --- */
+.navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 420px;
-    height: 520px;
-    object-fit: cover;
-    border-radius: 210px 210px 30px 30px; /* Perfect Arch */
-    border: 8px solid white;
-    box-shadow: 0 25px 50px rgba(244, 143, 177, 0.3);
+    height: 100vh;
+    background: rgba(252, 228, 236, 0.98); /* Rich Pink Wash */
+    backdrop-filter: blur(15px);
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+    transform: translateY(-100%); /* Slides from top */
+    z-index: 1090;
 }
 
-/* 5. The "Outstanding" Button */
-.btn-esthsy {
-    background: var(--esthsy-pink);
-    color: white;
-    border-radius: 50px;
-    padding: 15px 35px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: none;
-    box-shadow: 0 10px 20px rgba(244, 143, 177, 0.4);
-    transition: 0.4s;
+.navbar-collapse.show { transform: translateY(0); }
+
+.menu-overlay-content .nav-link {
+    font-family: 'Playfair Display', serif;
+    color: var(--esthsy-brown) !important;
+    margin: 15px 0;
+    transition: 0.3s;
 }
 
-.btn-esthsy:hover {
-    transform: translateY(-5px) scale(1.05);
-    background: #ec407a;
-    color: white;
-    box-shadow: 0 15px 30px rgba(236, 64, 122, 0.4);
-}
-
-@keyframes float { 
-    0%, 100% { transform: translateY(0); } 
-    50% { transform: translateY(-20px); } 
-}
+.menu-overlay-content .nav-link:hover { color: var(--esthsy-pink) !important; transform: scale(1.1); }
