@@ -1,0 +1,76 @@
+:root {
+    --esthsy-pink: #f48fb1;       /* Vibrant but soft pink */
+    --esthsy-pink-light: #fce4ec; /* Background wash */
+    --esthsy-brown: #4e342e;      /* Deep chocolate text */
+    --esthsy-white: #ffffff;
+    --header-height: 80px;        /* Fixes your spacing issue */
+}
+
+/* 1. The "Inviting" Background */
+body { 
+    background: linear-gradient(180deg, #fce4ec 0%, #fff5f8 100%);
+    color: var(--esthsy-brown);
+    font-family: 'Inter', sans-serif;
+    padding-top: var(--header-height); /* Essential: Creates the boundary */
+}
+
+h1, h2, .navbar-brand { font-family: 'Playfair Display', serif; }
+
+/* 2. The "App-Style" Sticky Header */
+.navbar {
+    height: var(--header-height);
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(20px); /* Glass effect */
+    border-bottom: 2px solid rgba(244, 143, 177, 0.2); /* The boundary line */
+    z-index: 1050;
+}
+
+/* 3. The Hamburger "X" Logic */
+.navbar-toggler { border: none !important; width: 30px; height: 30px; position: relative; }
+.toggler-icon { width: 100%; height: 2px; background: var(--esthsy-brown); display: block; position: absolute; transition: 0.3s; }
+.top-bar { top: 6px; } .middle-bar { top: 14px; } .bottom-bar { top: 22px; }
+.navbar-toggler:not(.collapsed) .top-bar { transform: rotate(45deg); top: 14px; }
+.navbar-toggler:not(.collapsed) .middle-bar { opacity: 0; }
+.navbar-toggler:not(.collapsed) .bottom-bar { transform: rotate(-45deg); top: 14px; }
+
+/* 4. The Stunning Hero Arch */
+.hero-arch-wrapper {
+    position: relative;
+    animation: float 5s infinite ease-in-out;
+}
+
+.hero-arch-img {
+    width: 100%;
+    max-width: 420px;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 210px 210px 30px 30px; /* Perfect Arch */
+    border: 8px solid white;
+    box-shadow: 0 25px 50px rgba(244, 143, 177, 0.3);
+}
+
+/* 5. The "Outstanding" Button */
+.btn-esthsy {
+    background: var(--esthsy-pink);
+    color: white;
+    border-radius: 50px;
+    padding: 15px 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(244, 143, 177, 0.4);
+    transition: 0.4s;
+}
+
+.btn-esthsy:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: #ec407a;
+    color: white;
+    box-shadow: 0 15px 30px rgba(236, 64, 122, 0.4);
+}
+
+@keyframes float { 
+    0%, 100% { transform: translateY(0); } 
+    50% { transform: translateY(-20px); } 
+}
