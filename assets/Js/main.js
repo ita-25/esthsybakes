@@ -1,48 +1,30 @@
-// Close mobile menu on link click
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        const menu = document.getElementById('fullscreenMenu');
-        const bsCollapse = new bootstrap.Collapse(menu, {toggle: false});
-        if (menu.classList.contains('show')) {
-            bsCollapse.hide();
-        }
-    });
-});
-
-/**
- * ESTHSY BAKES - ORDERING LOGIC
- */
-
-// 1. Function to open the modal and set the item name
+// Function to handle the Order Modal
 function openOrderModal(itemName) {
-    // Set the heading inside the modal
-    document.getElementById('itemTitle').innerText = `Order ${itemName}`;
-    
-    // Trigger the Bootstrap Modal
+    const titleElement = document.getElementById('itemTitle');
+    if(titleElement) {
+        titleElement.innerText = `Order ${itemName}`;
+    }
     const myModal = new bootstrap.Modal(document.getElementById('orderModal'));
     myModal.show();
 }
 
-// 2. Function to collect data and send to WhatsApp
+// Function for WhatsApp Redirect
 function sendOrder() {
-    const phoneNumber = "2349136477515";
+    const phone = "2349136477515";
+    const item = document.getElementById('itemTitle').innerText;
+    const qty = document.getElementById('qty').value;
+    const pref = document.getElementById('pref').value;
     
-    // Get values from the modal inputs
-    const item = document.getElementById('itemTitle').innerText.replace('Order ', '');
-    const quantity = document.getElementById('qty').value;
-    const preference = document.getElementById('pref').value;
-    
-    // Create the "Stunning" message template
-    const message = `Hello Esthsy! 🍪
-I'm ordering from your website:
-    
-✨ *Product:* ${item}
-📦 *Quantity:* ${quantity}
-📝 *My Preference:* ${preference || "Standard (Baker's Choice)"}
-    
-Please let me know the total price and delivery schedule!`;
-
-    // Encode for URL and open WhatsApp
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    const text = `Hello Esthsy! 🍪\nI'd like to order: *${item}*\nQty: *${qty}*\nPreference: *${pref}*`;
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
 }
+
+// Ensure the Mobile Menu closes when a link is clicked
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        const menu = document.getElementById('fullscreenMenu');
+        if (menu.classList.contains('show')) {
+            bootstrap.Collapse.getInstance(menu).hide();
+        }
+    });
+});
