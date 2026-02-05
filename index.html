@@ -10,7 +10,9 @@
 </head>
 <body>
 
- <nav class="navbar navbar-expand-lg fixed-top px-3"> <div class="container-fluid"> <a class="navbar-brand fw-bold" href="index.html">Esthsy Bakes</a>
+ <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">Esthsy Bakes</a>
         
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fullscreenMenu">
             <div class="hamburger-box">
@@ -21,26 +23,17 @@
         </button>
 
         <div class="collapse navbar-collapse" id="fullscreenMenu">
-            <div class="menu-overlay-content">
-                <ul class="navbar-nav text-center">
-                    <li class="nav-item"><a class="nav-link display-5" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link display-5" href="menu.html">Our Menu</a></li>
-                    <li class="nav-item"><a class="nav-link display-5" href="about.html">Our Story</a></li>
-                    <li class="nav-item"><a class="nav-link display-5" href="contact.html">Get in Touch</a></li>
-                </ul>
-                <div class="menu-footer mt-5 text-center">
-                    <p class="small text-uppercase ls-2">Follow the sweetness</p>
-                    <div class="d-flex justify-content-center gap-4 fs-3">
-                        <a href="#" class="text-brown"><i class="bi bi-instagram"></i></a>
-                        <a href="https://wa.me/2349136477515" class="text-brown"><i class="bi bi-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
+            <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
         </div>
     </div>
 </nav>
 
-   <main>
+<main>
     <section class="hero-section py-5">
         <div class="container">
             <div class="row align-items-center g-5">
@@ -78,53 +71,34 @@
         </div>
     </section>
 
-
-<footer class="py-5 mt-5" style="background: var(--esthsy-white); border-top: 2px solid var(--esthsy-pink-light);">
+<footer class="py-5 bg-white border-top">
     <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-4 text-center text-lg-start">
-                <img src="assets/img/logo.png" width="120" alt="Esthsy Logo" class="mb-4">
-                <h4 class="fw-bold mb-3">Esthsy Bakes</h4>
-                <p class="text-muted pe-lg-5">Crafting premium moments through handcrafted cookies and snacks. Quality you can taste, excellence you can see.</p>
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <img src="assets/img/logo.png" width="100" class="mb-3">
+                <h4 class="fw-bold">Esthsy Bakes</h4>
+                <p class="text-muted">Excellence in every bite. Handcrafted in Lagos.</p>
             </div>
-
-            <div class="col-6 col-lg-2">
-                <h6 class="fw-bold text-uppercase mb-4" style="color: var(--esthsy-pink); letter-spacing: 2px;">Menu</h6>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="menu.html" class="text-decoration-none text-brown opacity-75">All Cookies</a></li>
-                    <li class="mb-2"><a href="#" class="text-decoration-none text-brown opacity-75">Gift Boxes</a></li>
-                    <li class="mb-2"><a href="#" class="text-decoration-none text-brown opacity-75">New Arrivals</a></li>
+            <div class="col-6 col-lg-2 ms-auto">
+                <h6 class="fw-bold text-pink">Quick Links</h6>
+                <ul class="list-unstyled small">
+                    <li><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                    <li><a href="menu.html" class="text-decoration-none text-muted">Menu</a></li>
+                    <li><a href="about.html" class="text-decoration-none text-muted">Story</a></li>
                 </ul>
             </div>
-
-            <div class="col-6 col-lg-2">
-                <h6 class="fw-bold text-uppercase mb-4" style="color: var(--esthsy-pink); letter-spacing: 2px;">Our World</h6>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="about.html" class="text-decoration-none text-brown opacity-75">Our Story</a></li>
-                    <li class="mb-2"><a href="contact.html" class="text-decoration-none text-brown opacity-75">Contact Us</a></li>
-                    <li class="mb-2"><a href="#" class="text-decoration-none text-brown opacity-75">Privacy Policy</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-4 text-center text-lg-start">
-                <h6 class="fw-bold text-uppercase mb-4" style="color: var(--esthsy-pink); letter-spacing: 2px;">Get in Touch</h6>
-                <p class="text-brown mb-1">WhatsApp: +234 913 647 7515</p>
-                <p class="text-brown mb-4">Lagos, Nigeria</p>
-                <div class="d-flex justify-content-center justify-content-lg-start gap-3 fs-4">
-                    <a href="https://wa.me/2349136477515" class="text-pink"><i class="bi bi-whatsapp"></i></a>
+            <div class="col-lg-3">
+                <h6 class="fw-bold text-pink">Contact</h6>
+                <p class="small text-muted mb-1">+234 913 647 7515</p>
+                <div class="d-flex gap-3 mt-3 fs-5">
                     <a href="#" class="text-pink"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="text-pink"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-pink"><i class="bi bi-whatsapp"></i></a>
                 </div>
             </div>
         </div>
-
-        <hr class="my-5 opacity-10">
-        
-        <div class="text-center">
-            <p class="small text-muted mb-0">&copy; 2026 Esthsy Bakes. Baking Excellence Every Day.</p>
-        </div>
     </div>
 </footer>
+
 
 <div class="modal fade" id="orderModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
