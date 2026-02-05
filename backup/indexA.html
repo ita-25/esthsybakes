@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esthsy Bakes | Exquisite Handcrafted Treats</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/CSS/style3.css">
+  <style>
+/* --- APP-STYLE HEADER BOUNDARY --- */
+:root {
+    --esthsy-pink: #f48fb1;
+    --esthsy-brown: #4e342e;
+    --header-height: 75px;
+}
+
+body { padding-top: var(--header-height); background: #fce4ec; }
+
+/* --- THE HAMBURGER BOX FIX --- */
+.navbar-toggler {
+    border: none !important;
+    padding: 0 !important;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100; /* Stays above the overlay */
+}
+
+.hamburger-box {
+    width: 24px;
+    height: 18px;
+    position: relative;
+}
+
+.toggler-icon {
+    width: 24px;
+    height: 2px;
+    background: var(--esthsy-brown);
+    display: block;
+    position: absolute;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.top-bar { top: 0; }
+.middle-bar { top: 8px; }
+.bottom-bar { top: 16px; }
+
+/* The "X" Transformation - Centered perfectly */
+.navbar-toggler:not(.collapsed) .top-bar { transform: rotate(45deg); top: 8px; }
+.navbar-toggler:not(.collapsed) .middle-bar { opacity: 0; }
+.navbar-toggler:not(.collapsed) .bottom-bar { transform: rotate(-45deg); top: 8px; }
+
+/* --- THE STYLE 3 FULL-SCREEN OVERLAY --- */
+.navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(252, 228, 236, 0.98); /* Rich Pink Wash */
+    backdrop-filter: blur(15px);
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+    transform: translateY(-100%); /* Slides from top */
+    z-index: 1090;
+}
+
+.navbar-collapse.show { transform: translateY(0); }
+
+.menu-overlay-content .nav-link {
+    font-family: 'Playfair Display', serif;
+    color: var(--esthsy-brown) !important;
+    margin: 15px 0;
+    transition: 0.3s;
+}
+
+.menu-overlay-content .nav-link:hover { color: var(--esthsy-pink) !important; transform: scale(1.1); }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top px-3"> <div class="container-fluid"> <a class="navbar-brand fw-bold" href="index.html">Esthsy Bakes</a>
+        
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fullscreenMenu">
+            <div class="hamburger-box">
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon middle-bar"></span>
+                <span class="toggler-icon bottom-bar"></span>
+            </div>
+        </button>
+
+        <div class="collapse navbar-collapse" id="fullscreenMenu">
+            <div class="menu-overlay-content">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item"><a class="nav-link display-5" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link display-5" href="menu.html">Our Menu</a></li>
+                    <li class="nav-item"><a class="nav-link display-5" href="about.html">Our Story</a></li>
+                    <li class="nav-item"><a class="nav-link display-5" href="contact.html">Get in Touch</a></li>
+                </ul>
+                <div class="menu-footer mt-5 text-center">
+                    <p class="small text-uppercase ls-2">Follow the sweetness</p>
+                    <div class="d-flex justify-content-center gap-4 fs-3">
+                        <a href="#" class="text-brown"><i class="bi bi-instagram"></i></a>
+                        <a href="https://wa.me/2349136477515" class="text-brown"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+<main>
+    <section class="hero-section py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h6 class="fw-bold mb-3" style="color: var(--esthsy-pink); letter-spacing: 3px;">TASTE THE EXCELLENCE</h6>
+                    <h1 class="display-1 fw-bold mb-4">Baked with <br><span style="color: var(--esthsy-pink);">Passion.</span></h1>
+                    <p class="fs-5 mb-5 opacity-75">Premium cookies and treats handcrafted to satisfy your most exquisite cravings.</p>
+                    <a href="menu.html" class="btn btn-esthsy">Explore the Menu</a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="hero-arch-wrapper">
+                        <img src="assets/img/hero-cookie.jpg" class="hero-arch-img" alt="Esthsy Masterpiece">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+<footer class="py-5 mt-5" style="background: var(--esthsy-white); border-top: 2px solid var(--esthsy-pink-light);">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-4 text-center text-lg-start">
+                <img src="assets/img/logo.png" width="120" alt="Esthsy Logo" class="mb-4">
+                <h4 class="fw-bold mb-3">Esthsy Bakes</h4>
+                <p class="text-muted pe-lg-5">Crafting premium moments through handcrafted cookies and snacks. Quality you can taste, excellence you can see.</p>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <h6 class="fw-bold text-uppercase mb-4" style="color: var(--esthsy-pink); letter-spacing: 2px;">Menu</h6>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="menu.html" class="text-decoration-none text-brown opacity-75">All Cookies</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-brown opacity-75">Gift Boxes</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-brown opacity-75">New Arrivals</a></li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <h6 class="fw-bold text-uppercase mb-4" style="color: var(--esthsy-pink); letter-spacing: 2px;">Our World</h6>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="about.html" class="text-decoration-none text-brown opacity-75">Our Story</a></li>
+                    <li class="mb-2"><a href="contact.html" class="text-decoration-none text-brown opacity-75">Contact Us</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-brown opacity-75">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 text-center text-lg-start">
+                <h6 class="fw-bold text-uppercase mb-4" style="color: var(--esthsy-pink); letter-spacing: 2px;">Get in Touch</h6>
+                <p class="text-brown mb-1">WhatsApp: +234 913 647 7515</p>
+                <p class="text-brown mb-4">Lagos, Nigeria</p>
+                <div class="d-flex justify-content-center justify-content-lg-start gap-3 fs-4">
+                    <a href="https://wa.me/2349136477515" class="text-pink"><i class="bi bi-whatsapp"></i></a>
+                    <a href="#" class="text-pink"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-pink"><i class="bi bi-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5 opacity-10">
+        
+        <div class="text-center">
+            <p class="small text-muted mb-0">&copy; 2026 Esthsy Bakes. Baking Excellence Every Day.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+  // Close mobile menu on link click
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        const menu = document.getElementById('fullscreenMenu');
+        const bsCollapse = new bootstrap.Collapse(menu, {toggle: false});
+        if (menu.classList.contains('show')) {
+            bsCollapse.hide();
+        }
+    });
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
