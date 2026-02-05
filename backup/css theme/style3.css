@@ -1,0 +1,14 @@
+:root { --p: #ffc1e3; --b: #5d4037; --bg: linear-gradient(135deg, #fff5f8 0%, #ffffff 100%); }
+body { background: var(--bg); min-height: 100vh; }
+
+.navbar { background: rgba(255, 255, 255, 0.6) !important; backdrop-filter: blur(10px); }
+
+.btn-esthsy { 
+    background: linear-gradient(45deg, #ffc1e3, #f06292); 
+    border: none; 
+    box-shadow: 0 10px 20px rgba(240,98,146,0.3);
+    color: white;
+}
+
+@keyframes float { 0% {transform: translateY(0);} 50% {transform: translateY(-15px);} 100% {transform: translateY(0);} }
+.hero-arch-img { animation: float 6s infinite ease-in-out; }
