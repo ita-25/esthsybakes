@@ -1,36 +1,59 @@
-/* --- ESTHSY BAKES PERFECTED SYSTEM --- */
+/* --- ESTHSY BAKES: THE BOUTIQUE SYSTEM --- */
 :root {
     --esthsy-pink: #f48fb1;
-    --esthsy-pink-dark: #d81b60;
-    --esthsy-pink-light: #fff0f3;
+    --esthsy-pink-soft: #ffcad4;
+    --esthsy-cream: #fff5f7; /* Inviting Parisian Cream */
     --esthsy-brown: #4e342e;
-    --header-h: 85px;
-    --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --header-h: 90px;
+    --transition-luxury: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* 1. THE FOUNDATION & THE GAP */
+/* 1. THE FOUNDATION & THE APP-STYLE GAP */
 body { 
-    background-color: var(--esthsy-pink-light) !important;
-    font-family: 'Inter', sans-serif;
+    background-color: var(--esthsy-cream) !important;
     color: var(--esthsy-brown);
-    padding-top: var(--header-h) !important; /* FIXED CONTENT BOUNDARY */
+    font-family: 'Inter', sans-serif;
+    padding-top: var(--header-h) !important; /* THE NON-NEGOTIABLE BOUNDARY */
     overflow-x: hidden;
 }
 
 h1, h2, h3, .navbar-brand { font-family: 'Playfair Display', serif; }
 
-/* 2. THE STICKY HEADER BOUNDARY */
+/* 2. THE SOLID BOUTIQUE HEADER */
 .navbar {
     height: var(--header-h);
     background: #ffffff !important;
     border-bottom: 2px solid var(--esthsy-pink);
-    box-shadow: 0 4px 20px rgba(244, 143, 177, 0.2);
+    box-shadow: 0 10px 30px rgba(244, 143, 177, 0.1);
     z-index: 2000 !important;
 }
 
-.navbar-brand { font-size: 1.8rem; font-weight: 700; color: var(--esthsy-brown) !important; }
+.navbar-brand { 
+    font-size: 1.8rem; 
+    font-weight: 700; 
+    letter-spacing: -1px;
+    color: var(--esthsy-brown) !important; 
+}
 
-/* 3. STYLE 3: FULL SCREEN MENU OVERLAY */
+/* 3. THE "X" TOGGLE (STAYING IN THE BOX) */
+.navbar-toggler {
+    border: none !important;
+    width: 45px; height: 45px;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 2500;
+}
+.hamburger-box { width: 24px; height: 18px; position: relative; }
+.bar {
+    width: 24px; height: 2px; background: var(--esthsy-brown);
+    position: absolute; transition: var(--transition-luxury);
+}
+.bar-1 { top: 0; } .bar-2 { top: 8px; } .bar-3 { top: 16px; }
+
+.navbar-toggler:not(.collapsed) .bar-1 { transform: rotate(45deg); top: 8px; }
+.navbar-toggler:not(.collapsed) .bar-2 { opacity: 0; }
+.navbar-toggler:not(.collapsed) .bar-3 { transform: rotate(-45deg); top: 8px; }
+
+/* 4. STYLE 3: LUXURY MENU OVERLAY */
 @media (max-width: 991.98px) {
     .navbar-collapse {
         position: fixed;
@@ -40,63 +63,51 @@ h1, h2, h3, .navbar-brand { font-family: 'Playfair Display', serif; }
         flex-direction: column;
         align-items: center; justify-content: center;
         transform: translateY(-100%);
-        transition: var(--transition);
-        z-index: 1000;
+        transition: var(--transition-luxury);
+        z-index: 2200;
     }
     .navbar-collapse.show { transform: translateY(0); }
-    .nav-link { font-size: 2.2rem; font-weight: 700; color: var(--esthsy-brown) !important; margin: 10px 0; }
+    .nav-link { font-size: 2.5rem; font-weight: 700; margin: 15px 0; color: var(--esthsy-brown) !important; }
 }
 
-/* 4. THE X TOGGLE (PERFECTLY CENTERED) */
-.navbar-toggler {
-    border: none !important;
-    z-index: 2100;
-    width: 45px; height: 45px;
-    display: flex; align-items: center; justify-content: center;
-}
-.hamburger-box { width: 24px; height: 18px; position: relative; }
-.bar {
-    width: 24px; height: 2px; background: var(--esthsy-brown);
-    position: absolute; transition: var(--transition);
-}
-.bar-1 { top: 0; } .bar-2 { top: 8px; } .bar-3 { top: 16px; }
+/* 5. THE ORGANIC FLOATING HERO (STYLE-PRO SOUL) */
+.hero-section { min-height: 80vh; display: flex; align-items: center; }
 
-.navbar-toggler:not(.collapsed) .bar-1 { transform: rotate(45deg); top: 8px; }
-.navbar-toggler:not(.collapsed) .bar-2 { opacity: 0; }
-.navbar-toggler:not(.collapsed) .bar-3 { transform: rotate(-45deg); top: 8px; }
-
-/* 5. THE FLOATING ORGANIC HERO (STYLE-PRO VIBE) */
-.hero-section { 
-    min-height: calc(100vh - var(--header-h)); 
-    display: flex; align-items: center; 
-}
-
-.floating-img-container {
+.floating-image-wrapper {
     width: 100%; max-width: 450px;
     aspect-ratio: 1/1;
     background: #ffffff;
-    border-radius: 60px; /* SOFT ORGANIC ROUNDED CORNERS */
-    border: 10px solid white;
-    box-shadow: 0 30px 60px rgba(244, 143, 177, 0.3);
-    overflow: hidden;
-    animation: float 6s infinite ease-in-out;
+    border-radius: 80px; /* Luxury Organic Softness */
+    padding: 15px;
+    box-shadow: 0 40px 80px rgba(244, 143, 177, 0.25);
+    animation: floatingHero 7s infinite ease-in-out;
 }
-.floating-img-container img { width: 100%; height: 100%; object-fit: cover; }
-
-@keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-25px) rotate(2deg); }
+.floating-image-wrapper img { 
+    width: 100%; height: 100%; 
+    object-fit: cover; 
+    border-radius: 65px; 
 }
 
-/* 6. BUTTONS & UI */
+@keyframes floatingHero {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-30px) rotate(2deg); }
+}
+
+/* 6. BUTTONS: THE FINISHING TOUCH */
 .btn-esthsy {
     background: var(--esthsy-pink);
     color: white !important;
     border-radius: 50px;
-    padding: 16px 45px;
+    padding: 18px 45px;
     font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
     border: none;
-    box-shadow: 0 10px 25px rgba(244, 143, 177, 0.4);
-    transition: var(--transition);
+    box-shadow: 0 15px 30px rgba(244, 143, 177, 0.35);
+    transition: var(--transition-luxury);
 }
-.btn-esthsy:hover { transform: translateY(-5px) scale(1.02); background: var(--esthsy-pink-dark); }
+.btn-esthsy:hover { 
+    transform: translateY(-8px) scale(1.03); 
+    box-shadow: 0 20px 40px rgba(244, 143, 177, 0.5); 
+}
