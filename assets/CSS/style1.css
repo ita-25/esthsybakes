@@ -1,0 +1,14 @@
+:root { --p: #D4A5A5; --b: #4A3728; --bg: #ffffff; }
+body { background: var(--bg); color: var(--b); font-family: 'Playfair Display', serif; }
+
+/* The X Toggle Animation */
+.navbar-toggler { border: none !important; padding: 0; width: 30px; height: 30px; position: relative; }
+.toggler-icon { width: 100%; height: 2px; background: var(--b); display: block; position: absolute; transition: 0.3s; }
+.middle-bar { top: 14px; } .bottom-bar { top: 24px; }
+.navbar-toggler:not(.collapsed) .top-bar { transform: rotate(45deg); top: 14px; }
+.navbar-toggler:not(.collapsed) .middle-bar { opacity: 0; }
+.navbar-toggler:not(.collapsed) .bottom-bar { transform: rotate(-45deg); top: 14px; }
+
+.hero-section { border-bottom: 1px solid #eee; padding: 150px 0; }
+.btn-esthsy { border: 1px solid var(--p); background: transparent; color: var(--p); border-radius: 0; }
+.btn-esthsy:hover { background: var(--p); color: #fff; }
