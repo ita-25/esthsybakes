@@ -1,113 +1,69 @@
-/* --- ESTHSY BAKES: THE BOUTIQUE SYSTEM --- */
 :root {
-    --esthsy-pink: #f48fb1;
-    --esthsy-pink-soft: #ffcad4;
-    --esthsy-cream: #fff5f7; /* Inviting Parisian Cream */
-    --esthsy-brown: #4e342e;
+    --pink: #f48fb1;
+    --cream: #fff5f7;
+    --brown: #4e342e;
     --header-h: 90px;
-    --transition-luxury: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    --luxury-ease: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* 1. THE FOUNDATION & THE APP-STYLE GAP */
 body { 
-    background-color: var(--esthsy-cream) !important;
-    color: var(--esthsy-brown);
+    background-color: var(--cream) !important;
+    color: var(--brown);
     font-family: 'Inter', sans-serif;
-    padding-top: var(--header-h) !important; /* THE NON-NEGOTIABLE BOUNDARY */
+    padding-top: var(--header-h) !important;
     overflow-x: hidden;
 }
 
-h1, h2, h3, .navbar-brand { font-family: 'Playfair Display', serif; }
+h1, h2, .navbar-brand { font-family: 'Playfair Display', serif; }
 
-/* 2. THE SOLID BOUTIQUE HEADER */
+/* HEADER BOUNDARY */
 .navbar {
     height: var(--header-h);
     background: #ffffff !important;
-    border-bottom: 2px solid var(--esthsy-pink);
+    border-bottom: 2px solid var(--pink);
     box-shadow: 0 10px 30px rgba(244, 143, 177, 0.1);
     z-index: 2000 !important;
 }
 
-.navbar-brand { 
-    font-size: 1.8rem; 
-    font-weight: 700; 
-    letter-spacing: -1px;
-    color: var(--esthsy-brown) !important; 
-}
+/* THE X TOGGLE */
+.navbar-toggler { border: none !important; width: 45px; height: 45px; z-index: 2500; }
+.bar { width: 24px; height: 2px; background: var(--brown); position: absolute; transition: var(--luxury-ease); }
+.bar-1 { top: 12px; } .bar-2 { top: 20px; } .bar-3 { top: 28px; }
 
-/* 3. THE "X" TOGGLE (STAYING IN THE BOX) */
-.navbar-toggler {
-    border: none !important;
-    width: 45px; height: 45px;
-    display: flex; align-items: center; justify-content: center;
-    z-index: 2500;
-}
-.hamburger-box { width: 24px; height: 18px; position: relative; }
-.bar {
-    width: 24px; height: 2px; background: var(--esthsy-brown);
-    position: absolute; transition: var(--transition-luxury);
-}
-.bar-1 { top: 0; } .bar-2 { top: 8px; } .bar-3 { top: 16px; }
-
-.navbar-toggler:not(.collapsed) .bar-1 { transform: rotate(45deg); top: 8px; }
+.navbar-toggler:not(.collapsed) .bar-1 { transform: rotate(45deg); top: 20px; }
 .navbar-toggler:not(.collapsed) .bar-2 { opacity: 0; }
-.navbar-toggler:not(.collapsed) .bar-3 { transform: rotate(-45deg); top: 8px; }
+.navbar-toggler:not(.collapsed) .bar-3 { transform: rotate(-45deg); top: 20px; }
 
-/* 4. STYLE 3: LUXURY MENU OVERLAY */
+/* FULL SCREEN OVERLAY (STYLE 3) */
 @media (max-width: 991.98px) {
     .navbar-collapse {
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100vh;
+        position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
         background: rgba(255, 255, 255, 0.98);
-        display: flex !important;
-        flex-direction: column;
+        display: flex !important; flex-direction: column;
         align-items: center; justify-content: center;
-        transform: translateY(-100%);
-        transition: var(--transition-luxury);
-        z-index: 2200;
+        transform: translateY(-100%); transition: var(--luxury-ease);
     }
     .navbar-collapse.show { transform: translateY(0); }
-    .nav-link { font-size: 2.5rem; font-weight: 700; margin: 15px 0; color: var(--esthsy-brown) !important; }
+    .nav-link { font-size: 2.5rem; font-weight: 700; margin: 15px 0; }
 }
 
-/* 5. THE ORGANIC FLOATING HERO (STYLE-PRO SOUL) */
-.hero-section { min-height: 80vh; display: flex; align-items: center; }
-
-.floating-image-wrapper {
-    width: 100%; max-width: 450px;
-    aspect-ratio: 1/1;
-    background: #ffffff;
-    border-radius: 80px; /* Luxury Organic Softness */
-    padding: 15px;
+/* FLOATING ORGANIC IMAGE */
+.floating-img-wrapper {
+    width: 100%; max-width: 450px; aspect-ratio: 1/1;
+    background: #fff; border-radius: 80px; padding: 15px;
     box-shadow: 0 40px 80px rgba(244, 143, 177, 0.25);
     animation: floatingHero 7s infinite ease-in-out;
 }
-.floating-image-wrapper img { 
-    width: 100%; height: 100%; 
-    object-fit: cover; 
-    border-radius: 65px; 
-}
+.floating-img-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 65px; }
 
 @keyframes floatingHero {
     0%, 100% { transform: translateY(0) rotate(-1deg); }
     50% { transform: translateY(-30px) rotate(2deg); }
 }
 
-/* 6. BUTTONS: THE FINISHING TOUCH */
 .btn-esthsy {
-    background: var(--esthsy-pink);
-    color: white !important;
-    border-radius: 50px;
-    padding: 18px 45px;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    border: none;
-    box-shadow: 0 15px 30px rgba(244, 143, 177, 0.35);
-    transition: var(--transition-luxury);
+    background: var(--pink); color: white !important; border-radius: 50px;
+    padding: 18px 45px; font-weight: 700; letter-spacing: 2px; border: none;
+    transition: var(--luxury-ease); box-shadow: 0 15px 30px rgba(244, 143, 177, 0.35);
 }
-.btn-esthsy:hover { 
-    transform: translateY(-8px) scale(1.03); 
-    box-shadow: 0 20px 40px rgba(244, 143, 177, 0.5); 
-}
+.btn-esthsy:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(244, 143, 177, 0.5); }
